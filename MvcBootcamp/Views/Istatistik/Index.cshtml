@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- Yazılım kategorisindeki heading sayısı -->
+        <div class="col-md-4 mb-3" style="margin-top:30px">
+            <div class="card text-white bg-primary">
+                <div class="card-header">
+                    Toplam Kategori Sayısı
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.totalCategoryCount</h5>
+                    <p class="card-text">Toplam Kategori Sayısı</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- A harfi içeren kategorilerin sayısı -->
+        <div class="col-md-4 mb-3" style="margin-top:30px">
+            <div class="card text-white bg-success">
+                <div class="card-header">
+                    Yazılım kategorisine sahip olanların sayısı
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.softwareCount</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3" style="margin-top:30px">
+            <div class="card text-white bg-success">
+                <div class="card-header">
+                    "A" Harfi İçeren Kategori sayısı
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.containsLetterA</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3" style="margin-top:30px">
+            <div class="card text-white bg-success">
+                <div class="card-header">
+                    En fazla kategori başlığa sahip olan kategori
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.categoryNameThatHasMostTitle</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3" style="margin-top:30px">
+            <div class="card text-white bg-success">
+                <div class="card-header">
+                    Aktif ve pasif kategoriler arasındaki fark
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.difference</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
