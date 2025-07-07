@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    ViewBag.Title = "EditHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Başlık Güncelleme Sayfası</h3>
+@using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Başlık ID")
+        @Html.TextBoxFor(Model => Model.HeadingID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(Model => Model.HeadingID, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Başlık Adı")
+        @Html.TextBoxFor(Model => Model.HeadingName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(Model => Model.HeadingName, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Tarih")
+        @Html.TextBoxFor(Model => Model.HeadingDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(Model => Model.HeadingDate, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Id")
+        @Html.TextBoxFor(Model => Model.WriterID, new { @class = "form-control" })
+        @Html.ValidationMessageFor(Model => Model.WriterID, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(model => model.CategoryId,
+                  ViewBag.CategoryValues as List<SelectListItem>,
+                  "Kategori Seçiniz", new { @class = "form-control" })
+
+        <br />
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+}

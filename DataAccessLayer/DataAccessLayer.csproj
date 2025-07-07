@@ -52,10 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Class1.cs" />
@@ -64,14 +67,85 @@
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202506261456072_mig1.cs" />
     <Compile Include="Migrations\202506261456072_mig1.Designer.cs">
       <DependentUpon>202506261456072_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202506301110273_mig_edit_writer.cs" />
+    <Compile Include="Migrations\202506301110273_mig_edit_writer.Designer.cs">
+      <DependentUpon>202506301110273_mig_edit_writer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202506301248217_mig_writer_edit.cs" />
+    <Compile Include="Migrations\202506301248217_mig_writer_edit.Designer.cs">
+      <DependentUpon>202506301248217_mig_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202506301334055_mig9.cs" />
+    <Compile Include="Migrations\202506301334055_mig9.Designer.cs">
+      <DependentUpon>202506301334055_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507010810165_mig_imagesizechange.cs" />
+    <Compile Include="Migrations\202507010810165_mig_imagesizechange.Designer.cs">
+      <DependentUpon>202507010810165_mig_imagesizechange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507010930114_migwrtier_status.cs" />
+    <Compile Include="Migrations\202507010930114_migwrtier_status.Designer.cs">
+      <DependentUpon>202507010930114_migwrtier_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507020351347_addContentStatus.cs" />
+    <Compile Include="Migrations\202507020351347_addContentStatus.Designer.cs">
+      <DependentUpon>202507020351347_addContentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507020354021_addHeadingStatus.cs" />
+    <Compile Include="Migrations\202507020354021_addHeadingStatus.Designer.cs">
+      <DependentUpon>202507020354021_addHeadingStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507030507213_migDeleteColumnMessageDate.cs" />
+    <Compile Include="Migrations\202507030507213_migDeleteColumnMessageDate.Designer.cs">
+      <DependentUpon>202507030507213_migDeleteColumnMessageDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507030510375_migAddMessageClass.cs" />
+    <Compile Include="Migrations\202507030510375_migAddMessageClass.Designer.cs">
+      <DependentUpon>202507030510375_migAddMessageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507031427418_addContactDateToContactTable.cs" />
+    <Compile Include="Migrations\202507031427418_addContactDateToContactTable.Designer.cs">
+      <DependentUpon>202507031427418_addContactDateToContactTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507040840027_mig_addimage_file.cs" />
+    <Compile Include="Migrations\202507040840027_mig_addimage_file.Designer.cs">
+      <DependentUpon>202507040840027_mig_addimage_file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507041027186_addAdminTable.cs" />
+    <Compile Include="Migrations\202507041027186_addAdminTable.Designer.cs">
+      <DependentUpon>202507041027186_addAdminTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507051617442_dropColumnMessageStatu.cs" />
+    <Compile Include="Migrations\202507051617442_dropColumnMessageStatu.Designer.cs">
+      <DependentUpon>202507051617442_dropColumnMessageStatu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507051619260_addColumnMessageStatu.cs" />
+    <Compile Include="Migrations\202507051619260_addColumnMessageStatu.Designer.cs">
+      <DependentUpon>202507051619260_addColumnMessageStatu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507060546276_changeDataTypeOfMessageStatu.cs" />
+    <Compile Include="Migrations\202507060546276_changeDataTypeOfMessageStatu.Designer.cs">
+      <DependentUpon>202507060546276_changeDataTypeOfMessageStatu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507061731283_madeMessagecontentAllowHtml.cs" />
+    <Compile Include="Migrations\202507061731283_madeMessagecontentAllowHtml.Designer.cs">
+      <DependentUpon>202507061731283_madeMessagecontentAllowHtml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202507071034552_writerEntityUpdated.cs" />
+    <Compile Include="Migrations\202507071034552_writerEntityUpdated.Designer.cs">
+      <DependentUpon>202507071034552_writerEntityUpdated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +163,57 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202506261456072_mig1.resx">
       <DependentUpon>202506261456072_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202506301110273_mig_edit_writer.resx">
+      <DependentUpon>202506301110273_mig_edit_writer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202506301248217_mig_writer_edit.resx">
+      <DependentUpon>202506301248217_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202506301334055_mig9.resx">
+      <DependentUpon>202506301334055_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507010810165_mig_imagesizechange.resx">
+      <DependentUpon>202507010810165_mig_imagesizechange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507010930114_migwrtier_status.resx">
+      <DependentUpon>202507010930114_migwrtier_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507020351347_addContentStatus.resx">
+      <DependentUpon>202507020351347_addContentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507020354021_addHeadingStatus.resx">
+      <DependentUpon>202507020354021_addHeadingStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507030507213_migDeleteColumnMessageDate.resx">
+      <DependentUpon>202507030507213_migDeleteColumnMessageDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507030510375_migAddMessageClass.resx">
+      <DependentUpon>202507030510375_migAddMessageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507031427418_addContactDateToContactTable.resx">
+      <DependentUpon>202507031427418_addContactDateToContactTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507040840027_mig_addimage_file.resx">
+      <DependentUpon>202507040840027_mig_addimage_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507041027186_addAdminTable.resx">
+      <DependentUpon>202507041027186_addAdminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507051617442_dropColumnMessageStatu.resx">
+      <DependentUpon>202507051617442_dropColumnMessageStatu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507051619260_addColumnMessageStatu.resx">
+      <DependentUpon>202507051619260_addColumnMessageStatu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507060546276_changeDataTypeOfMessageStatu.resx">
+      <DependentUpon>202507060546276_changeDataTypeOfMessageStatu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507061731283_madeMessagecontentAllowHtml.resx">
+      <DependentUpon>202507061731283_madeMessagecontentAllowHtml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202507071034552_writerEntityUpdated.resx">
+      <DependentUpon>202507071034552_writerEntityUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

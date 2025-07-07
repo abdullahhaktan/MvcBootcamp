@@ -3,6 +3,7 @@ using BusinnessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,11 @@ namespace MvcBootcamp.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
-        public ActionResult Index()
+
+        //[Authorize(Roles = "B")]
+        public ActionResult Index(int page=1)
         {
-            var categoryValues = cm.GetList();
+            var categoryValues = cm.GetList().ToPagedList(page,10);
             return View(categoryValues);
         }
 
@@ -54,10 +57,18 @@ namespace MvcBootcamp.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult EditCategory(int id)
         {
             var categoryValue = cm.GetByID(id);
             return View(categoryValue);
+        }
+
+        [HttpPost]
+        public ActionResult EditCategory(Category p)
+        {
+            cm.CategoryUpdate(p);
+            return RedirectToAction("Index");
         }
 
     }

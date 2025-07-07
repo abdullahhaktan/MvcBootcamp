@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+    ViewBag.Title = "WriterProfile";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2>Yazar Düzenleme Sayfası</h2>
+
+@using (Html.BeginForm("WriterProfile", "WriterPanel", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.HiddenFor(m => m.WriterID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yazar Adı")
+        @Html.TextBoxFor(m => m.WriterName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WriterName, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Soyadı")
+        @Html.TextBoxFor(m => m.WriterSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WriterSurname, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Mail")
+        @Html.TextBoxFor(m => m.WriterMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WriterMail, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Şifre")
+        @Html.PasswordFor(m => m.WriterPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WriterPassword, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Hakkında")
+        @Html.TextAreaFor(m => m.WriterAbout, new { @class = "form-control", rows = "4" })
+        @Html.ValidationMessageFor(m => m.WriterAbout, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Resim")
+        <input type="file" name="Image" id="Image"> @* "name" attribute should match the parameter in the controller *@
+        @* Opsiyonel olarak mevcut resmi göstermek isterseniz: *@
+        @* <img src="@Url.Content(Model.Image)" alt="Yazar Resmi" style="max-width: 150px;" /> *@
+        @Html.ValidationMessageFor(m => m.Image, "", new { @class = "text-danger" })
+        <br />
+        @Html.Label("Yazar Ünvanı")
+        @Html.TextBoxFor(m => m.WriterTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WriterTitle, "", new { @class = "text-danger" })
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+
+    </div>
+}

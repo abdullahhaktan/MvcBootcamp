@@ -1,0 +1,14 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@{
+    ViewBag.Title = "GetAllContent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+Burada tüm içerikler listelenecek. ama aramaya göre yapacaksın
+
+@foreach (var item in Model)
+{
+    <p>@item.ContentValue</p>
+}

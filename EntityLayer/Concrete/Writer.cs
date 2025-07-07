@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace EntityLayer.Concrete
 {
@@ -16,16 +19,32 @@ namespace EntityLayer.Concrete
         public string WriterName { get; set; }
 
         [StringLength(50)]
-        public string WriterSurName { get; set; }
+        public string WriterSurname { get; set; }
 
         [StringLength(100)]
-        public string WriterImage { get; set; }
+        public string WriterAbout { get; set; }
 
-        [StringLength(50)]
+        [StringLength(200)]
         public string WriterMail { get; set; }
 
-        [StringLength(20)]
+        [StringLength(200)]
         public string WriterPassword { get; set; }
+
+        [StringLength(50)]
+        public string WriterTitle { get; set; }
+
+        public bool WriterStatus { get; set; }
+
+
+        [NotMapped]
+        public HttpPostedFileBase Image { get; set; }
+
+        public string ImageUrl { get; set; }
+
+
+        [StringLength(250)]
+        public string WriterImage { get; set; }
+
 
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Content> Contents { get; set; }

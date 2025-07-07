@@ -26,7 +26,8 @@ namespace BusinnessLayer.Concrete
 
         public void HeadingDelete(Heading heading)
         {
-            _headingDal.Delete(heading);
+
+            _headingDal.Update(heading);
         }
 
         public void HeadingUpdate(Heading heading)
@@ -44,5 +45,9 @@ namespace BusinnessLayer.Concrete
             return _headingDal.List();
         }
 
+        public List<Heading> GetListByWriter(int id)
+        {
+            return _headingDal.List(h => h.WriterID == id);
+        }
     }
 }

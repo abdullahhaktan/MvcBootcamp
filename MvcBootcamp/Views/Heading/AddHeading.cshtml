@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    ViewBag.Title = "AddHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3>Yeni Başlık Ekleme</h3>
+<br />
+@using (Html.BeginForm("AddHeading", "Heading", FormMethod.Post))
+{
+   <div class="form-group">
+       @Html.Label("Başlık Adı")
+       @Html.TextBoxFor(w => w.HeadingName, new { @class = "form-control", placeholder = "Başlık Adı" })
+       @Html.ValidationMessageFor(w => w.HeadingName)
+       <br />
+       @Html.Label("Başlık Tarihi")
+       @Html.TextBoxFor(model => model.HeadingDate, new { @type = "date", @class = "form-control" })
+       @Html.ValidationMessageFor(w => w.HeadingDate)
+       <br />
+       @Html.LabelFor(model => model.CategoryId, new { @class = "form-label" })
+       @Html.DropDownListFor(model => model.CategoryId,
+                ViewBag.categoryValues as List<SelectListItem>,
+                "Kategori Seçiniz",
+                new { @class = "form-control" })
+       @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+       <br />
+       @Html.LabelFor(model => model.WriterID, new { @class = "form-label" })
+       @Html.DropDownListFor(model => model.WriterID,
+                ViewBag.writerValues as List<SelectListItem>,
+                "Yazar seçiniz",
+                new { @class = "form-control" })
+       @Html.ValidationMessageFor(model => model.Writer, "", new { @class = "text-danger" })
+       <br />
+       <button type="submit" class="btn btn-primary">Başlığı oluştur</button>
+   </div>     
+}
