@@ -1,3 +1,4 @@
+[TR]
 # MvcBootcamp
 
 **Temelden İleri Seviyeye ASP.NET MVC 5 Bootcamp Projesi**
@@ -55,9 +56,68 @@ Projenin yerel makinenizde çalıştırılması için aşağıdaki adımları iz
 
 ---
 
-## 🖼️ Ekran Görüntüleri
+[EN]
+# MvcBootcamp
 
-Projenin farklı panellerine ait ekran görüntüleri aşağıdadır:
+**ASP.NET MVC 5 Bootcamp Project — From Basics to Advanced**
+
+This repository is a bootcamp project focused on learning **ASP.NET MVC 5** and multi-layered architecture (n-Tier) principles by implementing a fully functional Content Management System (CMS).
+
+[![.NET Framework](https://img.shields.io/badge/.NET_Framework-MVC_5-purple.svg)](https://dotnet.microsoft.com/)
+[![C#](https://img.shields.io/badge/Language-C%23-blue.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![GitHub repo size](https://img.shields.io/github/repo-size/abdullahhaktan/MvcBootcamp)](https://github.com/abdullahhaktan/MvcBootcamp)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## 💻 About the Project
+
+This project covers all aspects of **ASP.NET MVC** and multi-layered design in a hands-on manner, from basic **CRUD** operations to advanced architectural patterns.  
+The application is designed as a fully featured Content Management System (CMS) with both admin and author panels to manage categories, titles, and content.
+
+### Key Features 🌟
+
+| Category | Description | Applied Technologies / Patterns |
+| :--- | :--- | :--- |
+| **Architecture** | Sustainable and testable code structure. | **n-Tier Architecture**, BLL (Business Logic Layer), DAL (Data Access Layer) |
+| **Data Management** | Database operations, filtering, and pagination. | **Entity Framework**, **Code First** Approach, **PagedList** |
+| **Business Logic** | Separation and centralized management of business rules. | Repository Pattern, **Business Layer (Manager Classes)** |
+| **Security** | User authentication and authorization. | Form-based **Authentication** and **Authorization**, `[AllowAnonymous]` |
+| **Validation** | Client-side and server-side input validation. | **FluentValidation** (Server-side validation) |
+| **Messaging** | Private messaging module between users. | Inbox/Outbox, Drafts, Trash |
+| **Statistics** | Summary insights about project data. | Basic statistics calculated and displayed with **LINQ** queries |
+| **UI/UX** | Reusable and modular view components. | **Partial Views**, **Area** structure |
+
+---
+
+## 🛠️ Setup and Run
+
+Follow the steps below to run the project locally:
+
+### Requirements
+
+* [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework) (Visual Studio is required to open the project)
+* [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (for database operations)
+
+### Steps
+
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/abdullahhaktan/MvcBootcamp.git
+    ```
+2. **Prepare the Database:**
+    * Update the connection string (`ConnectionString`) in the `Web.config` file according to your SQL Server setup.
+    * Use **Entity Framework Code First Migrations** to create or update the database.
+3. **Open the Solution:**
+    * Launch Visual Studio and open the project (`MvcBootcamp.sln`).
+4. **Run the Application:**
+    * Press `F5` or use `Debug > Start Debugging` in Visual Studio.
+
+---
+
+
+## 🖼️
+
 
 <img width="938" height="435" alt="Ekran görüntüsü 2025-10-05 031103" src="https://github.com/user-attachments/assets/76a2a2a7-be8d-47cc-bac1-b9349041a4f7" />
 
