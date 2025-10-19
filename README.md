@@ -71,7 +71,3 @@ Projenin farklı panellerine ait ekran görüntüleri aşağıdadır:
 <img width="948" height="438" alt="Ekran görüntüsü 2025-10-05 031511" src="https://github.com/user-attachments/assets/dc10a0f9-b131-4232-b244-c42f9de942e2" />
 
 ---
-
-## 📝 Lisans
-
-Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için [LICENSE](LICENSE) dosyasına bakınız.
