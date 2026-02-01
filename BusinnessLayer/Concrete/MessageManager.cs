@@ -1,12 +1,7 @@
 ﻿using BusinnessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinnessLayer.Concrete
 {
@@ -21,7 +16,7 @@ namespace BusinnessLayer.Concrete
 
         public Message GetByID(int id)
         {
-           return _messageDal.Get(m => m.MessageID == id);
+            return _messageDal.Get(m => m.MessageID == id);
         }
 
 

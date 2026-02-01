@@ -4,10 +4,6 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using PagedList;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBootcamp.Controllers
@@ -17,9 +13,9 @@ namespace MvcBootcamp.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
         //[Authorize(Roles = "B")]
-        public ActionResult Index(int page=1)
+        public ActionResult Index(int page = 1)
         {
-            var categoryValues = cm.GetList().ToPagedList(page,10);
+            var categoryValues = cm.GetList().ToPagedList(page, 10);
             return View(categoryValues);
         }
 
@@ -35,14 +31,14 @@ namespace MvcBootcamp.Controllers
             CategoryValidator categoryValidator = new CategoryValidator();
             ValidationResult resutls = categoryValidator.Validate(p);
 
-            if(resutls.IsValid)
+            if (resutls.IsValid)
             {
                 cm.CategoryAdd(p);
                 return RedirectToAction("Index");
             }
             else
             {
-                foreach(var item in resutls.Errors)
+                foreach (var item in resutls.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }

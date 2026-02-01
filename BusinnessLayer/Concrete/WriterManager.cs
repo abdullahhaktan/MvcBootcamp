@@ -1,12 +1,8 @@
 ﻿using BusinnessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using Microsoft.SqlServer.Server;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinnessLayer.Concrete
 {
@@ -22,17 +18,17 @@ namespace BusinnessLayer.Concrete
 
         public Writer GetByID(int id)
         {
-            return _writerDal.Get(x=>x.WriterID == id);
+            return _writerDal.Get(x => x.WriterID == id);
         }
 
         public List<Writer> GetList()
         {
-           return _writerDal.List();
+            return _writerDal.List();
         }
 
         public void WriterAdd(Writer writer)
         {
-           _writerDal.Insert(writer);
+            _writerDal.Insert(writer);
         }
 
         public void WriterDelete(Writer writer)
@@ -63,7 +59,7 @@ namespace BusinnessLayer.Concrete
 
         public Writer GetWriterByMail(string mail)
         {
-            var writer = _writerDal.List().Where(w=>w.WriterMail == mail).FirstOrDefault();
+            var writer = _writerDal.List().Where(w => w.WriterMail == mail).FirstOrDefault();
             return writer;
         }
 

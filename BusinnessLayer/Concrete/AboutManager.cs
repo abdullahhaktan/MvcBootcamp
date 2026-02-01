@@ -1,11 +1,7 @@
 ﻿using BusinnessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinnessLayer.Concrete
 {
@@ -35,12 +31,12 @@ namespace BusinnessLayer.Concrete
 
         public About GetByID(int id)
         {
-           return _aboutDal.Get(a => a.AboutId == id);
+            return _aboutDal.Get(a => a.AboutId == id);
         }
 
         public List<About> GetList()
         {
-           return _aboutDal.List();
+            return _aboutDal.List();
         }
     }
 }

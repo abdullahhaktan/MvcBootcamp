@@ -1,9 +1,6 @@
 ﻿using BusinnessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBootcamp.Controllers
@@ -22,7 +19,7 @@ namespace MvcBootcamp.Controllers
             ViewBag.totalCategoryCount = totalCategoryCount;
 
             var SoftwareHeadingCount = cm.GetList().Where(c => c.CategoryName == "Yazılım").Count();
-            
+
             ViewBag.softwareCount = SoftwareHeadingCount;
 
             var containsLetterA = cm.GetList().Where(c => c.CategoryName.ToLower().Contains("a")).Count();

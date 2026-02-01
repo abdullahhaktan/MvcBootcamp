@@ -1,10 +1,6 @@
 ﻿using BusinnessLayer.Concrete;
 using BusinnessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBootcamp.Controllers
@@ -17,7 +13,6 @@ namespace MvcBootcamp.Controllers
         MessageManager mm = new MessageManager(new EfMessageDal());
 
         ContactValidator cv = new ContactValidator();
-
         public string AdminUserName()
         {
             string userName = Session["AdminUserName"] as string;

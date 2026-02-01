@@ -3,10 +3,6 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinnessLayer.Concrete
 {
@@ -50,7 +46,7 @@ namespace BusinnessLayer.Concrete
 
         public List<Content> GetListByWriter(int id)
         {
-          return _contentDal.List(x => x.WriterID == id);
+            return _contentDal.List(x => x.WriterID == id);
         }
     }
 }

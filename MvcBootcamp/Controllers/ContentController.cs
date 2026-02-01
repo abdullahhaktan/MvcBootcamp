@@ -1,10 +1,7 @@
 ﻿using BusinnessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBootcamp.Controllers
@@ -29,6 +26,8 @@ namespace MvcBootcamp.Controllers
         public ActionResult ContentByHeading(int id)
         {
             var contentValues = cm.GetListByHeadingId(id);
+            var contentHeading = c.Headings.Where(x => x.HeadingID == id).Select(y => y.HeadingName).FirstOrDefault();
+            ViewBag.heading = contentHeading;
             return View(contentValues);
         }
 

@@ -2,12 +2,9 @@
 using BusinnessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using FluentValidation.Results;
 using PagedList;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBootcamp.Controllers
@@ -21,7 +18,13 @@ namespace MvcBootcamp.Controllers
 
         public ActionResult Index(int page = 1)
         {
-            var headingValues = hm.GetList().ToPagedList(page,10);
+            var headingValues = hm.GetList().ToPagedList(page, 10);
+            return View(headingValues);
+        }
+
+        public ActionResult HeadingReport()
+        {
+            var headingValues = hm.GetList();
             return View(headingValues);
         }
 
@@ -39,11 +42,11 @@ namespace MvcBootcamp.Controllers
         List<SelectListItem> writerList()
         {
             List<SelectListItem> writerValues = (from x in wm.GetList()
-                                                   select new SelectListItem
-                                                   {
-                                                       Text = x.WriterName + " " +x.WriterSurname,
-                                                       Value = x.WriterID.ToString()
-                                                   }).ToList();
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.WriterName + " " + x.WriterSurname,
+                                                     Value = x.WriterID.ToString()
+                                                 }).ToList();
             return writerValues;
         }
 
@@ -71,16 +74,16 @@ namespace MvcBootcamp.Controllers
 
             var categoryList1 = categoryList();
 
-            foreach(var category in categoryList1)
+            foreach (var category in categoryList1)
             {
-                if(category.Value == HeadingValue.CategoryId.ToString())
+                if (category.Value == HeadingValue.CategoryId.ToString())
                 {
                     category.Selected = true;
                 }
             }
 
             ViewBag.categoryValues = categoryList1;
-            
+
             return View(HeadingValue);
         }
 
@@ -95,7 +98,7 @@ namespace MvcBootcamp.Controllers
         public ActionResult HeadingDelete(int id)
         {
             var headingValue = hm.GetByID(id);
-            if(headingValue.HeadingStatus == true)
+            if (headingValue.HeadingStatus == true)
             {
                 headingValue.HeadingStatus = false;
             }
@@ -106,5 +109,13 @@ namespace MvcBootcamp.Controllers
             hm.HeadingDelete(headingValue);
             return RedirectToAction("Index");
         }
+
+        public ActionResult GetHeadingByCategory(int id, int page = 1)
+        {
+            var headingValues = hm.GetList().Where(x => x.CategoryId == id).ToPagedList(page, 10);
+
+            return View(headingValues);
+        }
+
     }
 }

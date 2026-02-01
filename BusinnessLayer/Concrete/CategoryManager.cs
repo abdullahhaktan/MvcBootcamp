@@ -1,14 +1,7 @@
 ﻿using BusinnessLayer.Abstract;
-using BusinnessLayer.ValidationRules;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
-using FluentValidation.Results;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinnessLayer.Concrete
 {
@@ -34,7 +27,7 @@ namespace BusinnessLayer.Concrete
 
         public void CategoryUpdate(Category category)
         {
-           _categoryDal.Update(category);
+            _categoryDal.Update(category);
         }
 
         public Category GetByID(int id)

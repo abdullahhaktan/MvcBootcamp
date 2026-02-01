@@ -1,25 +1,20 @@
 ﻿using BusinnessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinnessLayer.Concrete
 {
     public class AdminLoginManager : IAdminLoginService
     {
-        private readonly IAdminDal _adminDal;
-        public AdminLoginManager(IAdminDal adminDal)
+        private readonly IAdminLoginDal _adminLoginDal;
+        public AdminLoginManager(IAdminLoginDal adminDal)
         {
-            _adminDal = adminDal;
+            _adminLoginDal = adminDal;
         }
 
         public Admin GetAdmin(string username, string password)
         {
-          return _adminDal.Get(x => x.AdminUserName == username && x.AdminPassword == password);
+            return _adminLoginDal.Get(x => x.AdminUserName == username && x.AdminPassword == password);
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using DataAccessLayer.Concrete;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Security;
 
 namespace MvcBootcamp.Roles
@@ -40,7 +38,7 @@ namespace MvcBootcamp.Roles
         {
             Context c = new Context();
             var x = c.Admins.FirstOrDefault(y => y.AdminUserName == username);
-            return new string[] {x.AdminRole }; // Assuming AdminRole is a string representing the role
+            return new string[] { x.AdminRole }; // Assuming AdminRole is a string representing the role
         }
 
         public override string[] GetUsersInRole(string roleName)
